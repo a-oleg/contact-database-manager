@@ -1,0 +1,77 @@
+type: object
+description: A user object
+required:
+  - email
+  - password
+  - createdAt
+  - activityStatus
+properties:
+  firstName:
+    type: string
+    example: Michael
+    description: First name of the user
+  lastName:
+    type: string
+    example: Smith
+    description: Last name of the user
+  loginName:
+    type: string
+    example: myLogin
+    description: Login for user authorization
+  email:
+    type: string
+    example: smith@gmail.com
+    description: User e-mail
+  password:
+    type: string
+    example: Qwerty1
+    description: User password
+  createdAt:
+    type: string
+    format: 2000-01-01T15:00:00+01
+    example: 2000-01-01T15:00:00+01
+    description: User creation date
+  activityStatus:
+    type: boolean
+    example: true
+    description: Current or archived version of the user
+  facebookProfile:
+    type: string
+    example: myFacebookProfile
+    description: Facebook profile
+  instagramProfile:
+    type: string
+    example: myInstagramProfile
+    description: Instagram profile
+  tikTokProfile:
+    type: string
+    example: myTikTokProfile
+    description: TikTok profile
+  xProfile:
+    type: string
+    example: myXProfile
+    description: X (ex Twitter) profile
+  iMessageProfile:
+    type: string
+    example: myiMessageProfile
+    description: iMessage profile
+  snapChatProfile:
+    type: string
+    example: mySnapChatProfile
+    description: SnapChat profile
+  pinterestProfile:
+    type: string
+    example: myPinterestProfile
+    description: Pinterest profile
+  linkedInProfile:
+    type: string
+    example: myLinkedInProfile
+    description: LinkedIn profile
+  redditProfile:
+    type: string
+    example: myRedditProfile
+    description: Reddit profile
+  gitHubProfile:
+    type: string
+    example: myGitHubProfile
+    description: GitHub profile

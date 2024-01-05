@@ -1,0 +1,140 @@
+openapi: 3.0.0
+info:
+  title: OpenAPI specification
+  description: Contact database manager specification
+  version: 0.0.1
+  contact:
+    name: Oleg
+    url: https://github.com/a-oleg
+servers:
+  - url: http://localhost:8080/api/v1/
+    description: Dev server
+
+paths:
+  /users:
+    get:
+      summary: Method of geting users
+      description: Method of getting users from the database
+      operationId: getUsers
+      tags:
+        - User
+      responses:
+        '200':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "model/userDto.yaml"
+        '515':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "model/Error.yaml"
+    post:
+      summary: Method of adding a user
+      description: Method for saving the user in the database
+      operationId: createUser
+      tags:
+        - User
+      requestBody:
+        required: true
+        content:
+          'application/json':
+            schema:
+              $ref: "model/userDto.yaml"
+      responses:
+        '200':
+          "description": Successful saving of the user
+          content:
+            application/json:
+              schema:
+                $ref: "model/userDto.yaml"
+        '515':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "model/Error.yaml"
+  /users/{id}:
+    get:
+      summary: Method of getting user by ID
+      operationId: getUserById
+      tags:
+        - User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: User ID
+          schema:
+            type: string
+      responses:
+        '200':
+          "description": Successful return of the user
+          content:
+            application/json:
+              schema:
+                $ref: "model/userDto.yaml"
+        '515':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "model/Error.yaml"
+    put:
+      summary: Method of updating the user by ID
+      description: The method of updating the user in the database
+      operationId: updateUserById
+      tags:
+        - User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: User ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          'application/json':
+            schema:
+              $ref: "model/userDto.yaml"
+      responses:
+        '200':
+          "description": Successful update of user data
+          content:
+            application/json:
+              schema:
+                $ref: "model/userDto.yaml"
+        '515':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "model/Error.yaml"
+    delete:
+      summary: Method for deleting a user by ID
+      description: The method of deleting the user in the database
+      operationId: deleteUserById
+      tags:
+        - User
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: User ID
+          schema:
+            type: string
+      responses:
+        '200':
+          "description": Successful deletion of the user
+          content:
+            'application/json': {}
+        '515':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: "model/Error.yaml"

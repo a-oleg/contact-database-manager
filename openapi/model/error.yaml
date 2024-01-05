@@ -1,0 +1,25 @@
+type: object
+description: The general error model of the application
+properties:
+  message:
+    type: string
+  code:
+    type: integer
+    example: 10001
+  errorTime:
+    type: string
+    format: data-time
+    example: 2000-01-01T15:00:00+01
+    description: Date of the event
+  type:
+    type: string
+    enum: [ 'ERROR', 'WARNING' ]
+    default: 'ERROR'
+  displayMessage:
+    type: string
+    example: "An error occurred while performing this operation. Error code 10-50000"
+required:
+  - description
+  - throwingDataTime
+  - code
+  - type
