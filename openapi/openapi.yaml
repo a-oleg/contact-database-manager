@@ -30,7 +30,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "model/Error.yaml"
+                $ref: "model/errorDto.yaml"
     post:
       summary: Method of adding a user
       description: Method for saving the user in the database
@@ -55,7 +55,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "model/Error.yaml"
+                $ref: "model/errorDto.yaml"
   /users/{id}:
     get:
       summary: Method of getting user by ID
@@ -81,7 +81,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "model/Error.yaml"
+                $ref: "model/errorDto.yaml"
     put:
       summary: Method of updating the user by ID
       description: The method of updating the user in the database
@@ -113,7 +113,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "model/Error.yaml"
+                $ref: "model/errorDto.yaml"
     delete:
       summary: Method for deleting a user by ID
       description: The method of deleting the user in the database
@@ -137,4 +137,4 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "model/Error.yaml"
+                $ref: "model/errorDto.yaml"
