@@ -1,10 +1,5 @@
 type: object
 description: A user object
-required:
-  - email
-  - password
-  - createdAt
-  - activityStatus
 properties:
   firstName:
     type: string
@@ -75,3 +70,8 @@ properties:
     type: string
     example: myGitHubProfile
     description: GitHub profile
+required:
+  - email
+  - password
+  - createdAt
+  - activityStatus
