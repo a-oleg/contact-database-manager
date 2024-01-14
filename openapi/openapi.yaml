@@ -129,9 +129,11 @@ paths:
             type: string
       responses:
         '200':
-          "description": Successful deletion of the user
+          "description": Successful deletion of the user. The UserDTO model is returned in case the user decides to cancel the deletion
           content:
-            'application/json': {}
+            application/json:
+              schema:
+                $ref: "model/userDto.yaml"
         '515':
           description: Internal server error
           content:
